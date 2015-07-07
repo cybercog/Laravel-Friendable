@@ -18,7 +18,7 @@ And then include the service provider within `app/config/app.php`.
 
 ```php
 'providers' => [
-    'DraperStudio\Friendable\FriendableServiceProvider'
+    DraperStudio\Friendable\FriendableServiceProvider::class
 ];
 ```
 
@@ -34,12 +34,13 @@ php artisan vendor:publish && php artisan migrate
 
 namespace App;
 
-use DraperStudio\Friendable\Traits\Friendable;
+use DraperStudio\Friendable\Traits\HasFriend;
+use DraperStudio\Friendable\Traits\HasFriendInterface;
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class User extends Model implements HasFriendInterface
 {
-    use Friendable;
+    use HasFriend;
 }
 
 ```

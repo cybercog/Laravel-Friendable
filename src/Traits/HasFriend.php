@@ -7,9 +7,9 @@ use DraperStudio\Friendable\Models\Friend;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Friendable.
+ * Class HasFriend.
  */
-trait Friendable
+trait HasFriend
 {
     /**
      * @return mixed
@@ -22,7 +22,7 @@ trait Friendable
     /**
      * @param Model $recipient
      *
-     * @return mixed
+     * @return $this|void
      */
     public function befriend(Model $recipient)
     {
@@ -43,8 +43,6 @@ trait Friendable
 
     /**
      * @param Model $recipient
-     *
-     * @return bool
      */
     public function unfriend(Model $recipient)
     {
@@ -59,7 +57,7 @@ trait Friendable
      * @param Model $recipient
      * @param null  $status
      *
-     * @return bool
+     * @return mixed
      */
     public function isFriendsWith(Model $recipient, $status = null)
     {
@@ -74,8 +72,6 @@ trait Friendable
 
     /**
      * @param Model $recipient
-     *
-     * @return bool
      */
     public function acceptFriendRequest(Model $recipient)
     {
@@ -90,8 +86,6 @@ trait Friendable
 
     /**
      * @param Model $recipient
-     *
-     * @return bool
      */
     public function denyFriendRequest(Model $recipient)
     {
@@ -106,8 +100,6 @@ trait Friendable
 
     /**
      * @param Model $recipient
-     *
-     * @return bool
      */
     public function blockFriendRequest(Model $recipient)
     {
@@ -122,8 +114,6 @@ trait Friendable
 
     /**
      * @param Model $recipient
-     *
-     * @return bool
      */
     public function unblockFriendRequest(Model $recipient)
     {
