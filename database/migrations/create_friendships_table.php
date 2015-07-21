@@ -3,11 +3,11 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
+/**
+ * Class CreateFriendshipsTable.
+ */
 class CreateFriendshipsTable extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up()
     {
         Schema::create('friendships', function (Blueprint $table) {
@@ -19,11 +19,8 @@ class CreateFriendshipsTable extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down()
     {
-        Schema::drop('friendships');
+        Schema::dropIfExists('friendships');
     }
 }

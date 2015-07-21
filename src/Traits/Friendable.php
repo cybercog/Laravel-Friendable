@@ -2,17 +2,17 @@
 
 namespace DraperStudio\Friendable\Traits;
 
-use DraperStudio\Friendable\Status;
 use DraperStudio\Friendable\Models\Friend;
+use DraperStudio\Friendable\Status;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class HasFriend.
+ * Class Friendable.
  */
-trait HasFriend
+trait Friendable
 {
     /**
-     * @return mixed
+     * @return \Illuminate\Database\Eloquent\Relations\MorphMany
      */
     public function friends()
     {

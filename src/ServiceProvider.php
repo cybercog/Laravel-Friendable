@@ -2,16 +2,13 @@
 
 namespace DraperStudio\Friendable;
 
-use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\ServiceProvider as IlluminateProvider;
 
 /**
- * Class FriendableServiceProvider.
+ * Class ServiceProvider.
  */
-class FriendableServiceProvider extends ServiceProvider
+class ServiceProvider extends IlluminateProvider
 {
-    /**
-     * Bootstrap any application services.
-     */
     public function boot()
     {
         $migrationFrom = __DIR__.'/../database/migrations/create_friendships_table.php';
@@ -20,9 +17,6 @@ class FriendableServiceProvider extends ServiceProvider
         $this->publishes([$migrationFrom => $migrationTo], 'migrations');
     }
 
-    /**
-     * Register any application services.
-     */
     public function register()
     {
         //

@@ -1,14 +1,16 @@
 <?php
 
-namespace DraperStudio\Friendable\Traits;
+namespace DraperStudio\Friendable\Contracts;
+
+use Illuminate\Database\Eloquent\Model;
 
 /**
- * Interface HasFriendInterface.
+ * Interface Friendable.
  */
-interface HasFriendInterface
+interface Friendable
 {
     /**
-     * @return mixed
+     * @return \Illuminate\Database\Eloquent\Relations\MorphMany
      */
     public function friends();
 
